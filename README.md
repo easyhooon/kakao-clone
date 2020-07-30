@@ -1,5 +1,5 @@
-# kakao-clone
- cloning kakao desktop app
+# Kokoa Clone 2020 Update
 
-*
-Kakao Desktop App Clone
+cloning kakao desktop app
+
+CSS got so much better!

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        height: 100vh; /*view for height 화면의 크기의 따라 달라지는 단위*/
+        margin: 20px;
+        display: flex;
+        justify-content: space-between; /*주축 default: 수평축(row)*/
+        /*flex-direction: column; */ /*주축과 교차축을 변경*/
+        align-items: center; /*교차축 default: 수직 축(column)*/
+        /*flex-wrap: wrap;*/ /*유동적으로 화면의 크기에 box의 개수를 맞추고싶을때 사용*/
+
+        /* justify-content: center;
+        flex-direction: column;
+        align-items: flex-end; */
+      }
+      /* body가 3개의 div의 부모 엘리먼트 */
+      /* 부모에게만 명시하면 자식에게는 명시할 필요가 없음 */
+      /*주축과 교차축의 default는 flex-direction을 통해 바꿀 수 있음 */
+      div {
+        /* display: inline-block; */
+        display: flex; /*이 문장이 밑에 j-c 와 a-i를 활성화 시킴*/
+        justify-content: center;
+        align-items: center;
+        /*글씨를 div block의 가운데로 위치 시킴*/
+        width: 300px;
+        height: 300px;
+        background-color: teal;
+        font-size: 28px;
+        color: white;
+      }
+      /* #tomato,
+      #tomato2,
+      #tomato3 {
+        background-color: tomato;
+      } */
+      #second {
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div id="second">2</div>
+    <div>3</div>
+  </body>
+</html>
+
+<!-- 인라인 블락은 요소 사이에 빈공간이 default로 존재하여 매우 불편함 -->
+<!-- responsibe design을 제공하지 않음, 모니터의 크기에 따라 한줄에 모든 블락이 안들어올수도 있음-->
+<!--flex, justify-content는 계산을 알아서 해주기 때문에 창 크기에 따른 영향을 받지 않음-->

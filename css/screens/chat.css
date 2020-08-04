@@ -1,0 +1,230 @@
+#chat-screen {
+  background-color: #abc1d1;
+  /* height: 100vh; */
+}
+/* 스크롤의 길이 설정 */
+
+#chat-screen .alt-header,
+#chat-screen .status-bar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #abc1d1;
+}
+/* 스크롤을 내려도 항상 보이도록 설정 */
+/* alt-header가 status-bar를 가리는 문제 발생 -> z-index 로 해결(layer) */
+
+#chat-screen .status-bar {
+  z-index: 2;
+}
+/* 인덱스가 클수록 화면상에 더 위에 있음(가려지지 않게됨) */
+
+#chat-screen .alt-header {
+  top: 10px;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.main-chat {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s linear;
+}
+/* 상자의 크기를 줄이고 가운데로 정렬하기 위한 작업 */
+
+.chat__timestamp {
+  color: white;
+  background-color: #92a4b2;
+  padding: 13px;
+  border-radius: 17px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+/* modifier의 장점! 두 개의 클래스를 하나로 */
+
+.message-row--own .message_bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+.message-row img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.message__author {
+  opacity: 0.8;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.message_bubble {
+  background-color: white;
+  padding: 10px 13px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  margin-right: 6px;
+}
+/* border-top-left-radius: 0px;-> 왼쪽 위에만 각지게 만들어주는 방법 */
+
+.message_time {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* .message-row--own .message_bubble {
+  order: 1;
+}
+
+.message-row--own .message_time {
+  order: 0;
+  left: 20px;
+} */
+/*순서를 바꾸는 방법!*/
+/* flex children에게만 적용된다! flex의 장점! */
+
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+/* 코드를 더욱 간단하게! */
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  box-sizing: border-box;
+  align-items: center;
+  transition: transform all 0.3s ease-in-out;
+}
+/* box-sizing: border-box; -> 패딩이 아이콘을 보이지 않게 할 경우 해결 방법 */
+
+.reply .reply__column:first-child {
+  width: 10%;
+}
+
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+.reply i {
+  opacity: 0.6;
+}
+.reply input {
+  padding: 10px;
+  height: 30px;
+  width: 97%;
+  border: var(--main-border);
+  border-radius: 20px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+/* column은 width를 가지고 있지 않음 
+따라서 input에 width를 주기 전에 column에 input을 줫음 
+column에 width를 주지않고 input에 width를 주면 적용되지 않음 */
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -1px;
+  top: 4px;
+}
+
+/* absolute를 만들라면 항상 부모의 position을 relative 설정 해놔야 한다는 것을 기억! */
+/* absoulte의 경우는 위치를 일일이 수정해야하는 단점이 있음 */
+
+.reply__column:last-child > i {
+  right: 40px;
+  top: 10px;
+}
+
+/* >: direct children */
+
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.reply__column button i {
+  opacity: 1;
+  top: 5px;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
+}
+/* property는 내부적으로(reply 내부의) focus된 element가 있는지알수있도록 해줌 */
+
+.reply .reply__column:first-child,
+.reply .fa-smile-wink,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-wink,
+.reply:focus-within button {
+  opacity: 0;
+}
+/* state selector라고 함 */
+
+.reply input:focus {
+  width: 93vw;
+  transform: translateX(-12%) translateY(-80px);
+}
+/* + 표시를 없애는 기능 */
+/* width가 10%였기 그 만큼 왼쪽으로 옮기면 됨 */
+/* input에 transition이 있기때문에 가능한것 없으면 문제가 생김 */
+/* reply를 통으로 내리고 input만 올림 */
+/* 부모 element가 자식 element들이 focus 되었을 때를 안다는 거니까 좋은 기능 */
+/* 앞에 reply를 안붙히면 모든 input이 밑에 기능이 수행됨 부모를 필요로 하는 이유 */
+
+.reply:focus-within {
+  transform: translateY(80px);
+}
+/* reply안에 무엇인가가 focus되면 이 기능이 발생함 */

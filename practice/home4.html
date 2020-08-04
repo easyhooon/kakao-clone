@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <!--웹사이트의 환경을 설정, 외부적으로 보여지지 않는 설정-->
+    <!--보라색 글자들이 attrute-->
+    <!-- 위의 attribute를 통해 타이틀 옆에 조그마한 아이콘이 생성됨-->
+    <!-- og-image는 카카오톡 같은곳에 공유되었을때 보이는 이미지 -->
+    <title>Home - My first website.</title>
+    <meta charset="utf-8" />
+    <!--영어가 아닌 문자인 경우 깨질 우려가 있음  대비 -->
+    <meta name="description" content="This is my website" />
+    <!--meta -> 부가적인 정보-->
+    <link href="styles.css" rel="stylesheet" />
+    <!--css와 연동-->
+    <style>
+      html {
+        background-color: tomato;
+      }
+      body {
+        margin: 20px 5px 12px 99px;
+        background-color: thistle;
+      }
+      div {
+        margin: 20 15 99 30;
+        height: 150px;
+        width: 150px;
+        background-color: whitesmoke;
+      }
+      span {
+        background-color: turquoise;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <!--사용자가 볼 수 있는 content를 보여줌-->
+    <!--div와 span의 차이점, span은 옆에 다른요소가 올수있음(한줄에 여러개가 가능)-->
+    <a href="#">link</a>
+    <!--옆에 다른 요소가 올 수 없으면 block, 있으면 inline 이라고 함-->
+    <!-- 짧은 글, 링크, 이미지등이 inline -->
+    <!--display:block; 을 통해 inline도 block으로 만들어줄 수 있음-->
+    <!--inline은 높이와 너비가 존재하지 않음 그래서 적용되지 않음-->
+    <header>
+      <h1>The Nico Times</h1>
+      <!--semantic tag 딱 봐도 website의 헤더에 위차힐 것을 알 수 있음 -->
+    </header>
+  </body>
+</html>
+<!-- 패딩은 박스의 보더, 경계에서 안쪽으로의 간격을 의미-->
+<!-- 마진은 박스의 보더, 경계에서 바깥쪽을의 간격을 의미 기본값 8px-->
+<!-- 방향을 지정해주지않으면 전 방향으로 적용-->
+<!-- 두개면, 상하, 좌우-->
+<!--padding: 20px 10px; 상하로 20px, 좌우로 10px-->
+<!--네개면 상 우 하 좌 순, -->
+<!--보더: 경게를 의미-->
+<!-- 폭(width), 스타일(style), color 순으로 작성하면 끝-->
+<!--collapsing margin-->
+<!--margin의 위아래에서만 일어나는 현상-->
+<!--흰 box의 경계가 보라색box의 경계와 같다면 이 두 margin이 하나로 취급되는 것-->
+<!--이 것을 해결하기 위한 패딩이 필요-->

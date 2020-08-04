@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      a {
+        color: wheat;
+        background-color: tomato;
+        text-decoration: none;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-size: 55px;
+        transition: all 1s ease-in-out;
+      }
+
+      /*transition은 hover 안에 있으면 안됨 transition이 hover안으로 찾아서 변화를 찾는 방식으로 구동됨*/
+      /*바뀌는 요소 중에 하나만 골라 바꾸고 싶을땐 앞에 써주면 됨*/
+      /*border-radius 1s ease-in-out;*/
+
+      a:hover {
+        border-radius: 20px;
+        color: tomato;
+        background-color: wheat;
+      }
+      /*변화를 시키려는 부분(애니메이션)은 이 안에 있어야함*/
+    </style>
+  </head>
+  <body>
+    <a href="#">Go home</a>
+  </body>
+</html>

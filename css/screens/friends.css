@@ -1,0 +1,63 @@
+#friends-display-link {
+  text-align: center;
+  display: block;
+  background-color: #fafafa;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
+
+#friends-display-link i {
+  color: rgba(0, 0, 0, 0.3);
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.friends-screen {
+  padding: 0px var(--horizontal-space);
+}
+
+.friends-screen__channel {
+  margin-top: 25px;
+  border-top: var(--main-border);
+  padding-top: 15px;
+}
+
+.friends-screen__channel-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  /* 아이콘을 양 옆에 위치 시키는 방법! */
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* visibility: hidden; 마우스에 걸리지 않게 빼버림 */
+/* 단지 브라우저가 이 element를 무시하도록 가술 같은 것을 쓴 것! */
+
+#splash-screen {
+  background-color: var(--yellow);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+  animation: hideSplashScreen 0.4s ease-in-out forwards;
+  animation-delay: 2s;
+}
+/* height: 100vh; -> 화면 높이의 100%를 의미
+absolute 포지션을 가진 div에 어떠한 부모도 있는 것을 원치 않음  */
+/* 애니메이션이 잘 작동되지만, opacity: 0을 기억하지 못함 다시 가려짐 
+forwards 애니메이션의 결과를 기억함 그 상태를 유지  */

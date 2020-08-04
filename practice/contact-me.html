@@ -1,0 +1,44 @@
+<name attribute = "value">Content</name>
+<human gender = "male">Human</human>
+<dog breed = "german-shepard">Dog</dog>
+<!--<title>This is the title of the document</title>
+<a href="http://google.com" target="_blank">Go to google</a>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> This is my title</title>
+        <link href="styles.css" rel="stylesheet">
+
+    </head>
+    <!--meta태그 -> 브라우저에 전달하는 추가정보, header에 속함-- body에 존재x>
+    <!--head: 사람들한테는 보이지않는 코드 크롬에게 정보를 제공하는 부분-->
+    <body>
+        <title>This is the title of the document</title>
+        <a href="http://google.com" target="_blank">Go to google</a>
+        <section>
+            <!--헤더의 이름을 주어 구분-->
+            <header id = "headerNumberOne" class = "defaultHeader">
+                <!-- 각 element에게 명칭을 내리는 작업-->
+                <!--id는 고유함, 각 element마다 한개만 가질 수 있음-->
+                <!--class는 반복가능함-->
+                <!--고유한 id와 동일한 속성의 class를 갖고 있을 수 있음-->
+                <!--웹상에 아예 고유한 element는 많이 없기 때문에 class를 많이 사용함-->
+                <h1>Title of a section</h1>
+
+            </header>
+        </section>
+        <div>
+            <header id = "differentHeader" class = "defaultHeader">
+                Title of the unknown container
+            </header>
+        </div>
+        <h1>This is my big title</h1> <!-- 의미가 있는 semantic tag-->
+        <!-- semantic 제목, 문단, 네비게이션 등등 뭔가 뜻이 있는 태그, article 
+        semantic 태그는 수많은 코드 속에서 각 항목이 각각 무엇을 뜻하는지 알려줌-->
+        <header>This is an important header</header>
+        <div>Whatever</div> <!-- 의미가 없는(지칭하는 것도 없는) non semantic tag--, 박스(컨테이너)와 같음, 내용물을 넣는 것-->
+        <span>something else </span> <!--이것도 --, 텍스트를 위한 컨테이너-->
+        <h6>Thus is my small title</h6>
+    </body>
+</html>

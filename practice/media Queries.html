@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      div {
+        background-color: teal;
+        width: 200px;
+        height: 200px;
+      }
+
+      @media screen and (max-width: 600px) {
+        div {
+          background-color: tomato;
+        }
+      }
+      @media screen and (min-width: 601px) and (max-width: 1200px) and (orientation: landscape) {
+        div {
+          background-color: wheat;
+        }
+        /*핸드폰이 가로일때만 작동 (landscape), 세로는 영어로(portrait), 이를 css는 인식할 수 있음*/
+      }
+      @media screen and (min-width: 1200px) {
+        div {
+          background-color: turquoise;
+        }
+      }
+      span {
+        font-size: 36px;
+      }
+      @media screen and (orientation: landscape) {
+        span {
+          display: none;
+        }
+      }
+      /* 스크린이 600px보다 작다면 을 의미 */
+      /* 사이 조건은 (min-width: 650px) and (max-width: 750) 이런식으로 */
+    </style>
+    <!-- Media Query는 오직 CSS만을 이용해서 스크린의 사이즈를 알 수 있는 방법 -->
+  </head>
+  <body>
+    <div></div>
+    <span>Please flip your phone :(</span>
+  </body>
+</html>
+<!-- 웹사이트에서 우클릭-검사 누르면- 좌상단에 elements 왼쪽에 device toolbar를 누르면 
+컴퓨터에서 모바일 화면이 어떻게 나오는지 확인 할 수 있음 -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+      span {
+        background-color: teal;
+        padding: 20px;
+        margin: 30px;
+      }
+      /* #tomato,
+      #tomato2,
+      #tomato3 {
+        background-color: tomato;
+      } */
+      .btn {
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .teal {
+        background-color: teal;
+      }
+      .tomato {
+        background-color: tomato;
+      }
+      /* #tomato == id ="tomato" */
+      /* .tomato == class = "tomato" */
+    </style>
+  </head>
+  <body>
+    <span class="btn teal">Hello</span>
+    <span class="btn tomato">Hello</span>
+    <span class="btn teal">Hello</span>
+    <span class="btn tomato">Hello</span>
+    <span class="btn teal">Hello</span>
+    <span class="btn tomato">Hello</span>
+  </body>
+</html>
+
+<!--span에 마진이 좌우로만 적용되고 상하로는 적용이 되지 않은 상황 발생-->
+<!-- -> 인라인이기 때문, 인라인은 높이와 너비가 없음, 따라서 위아래 margin을 가질 수 없음-->
+<!-- id를 이용해서 부분적으로 span의 배경색을 바꿀수있지만 같은코드를 반복적으로 사용하는 것은 비효율적임-->
+<!-- 그냥 , 를 이용해서 나타낼 수 있음 -->
+<!-- 요소를 가리킬 수 있으면서도 겹쳐도 되는 방법: class-->
+<!-- id는 제약이 많기에 클래스는 정말 많이 쓰는 방법이므로 알아 둘 것-->

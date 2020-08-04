@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        height: 100vh; /*view for height 화면의 크기의 따라 달라지는 단위*/
+        margin: 20px;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        color: white;
+        background-color: teal;
+      }
+      #different {
+        top: 5px; /*다른 div의 위치(block이든 margin이든)를 신경쓰지않고 5px위로 움직임, 완전이 다른 div와는 다른 layer에 놓이게 되는 것 */
+        /*모든 레이어중에 제일 위에 있다는 것을  기억*/
+        position: fixed; /*스크롤을 내려도 박스의 위치 고정*/
+
+        position: relative; /*element가 처음 위치한 곳을 기준으로 위치를 수정*/
+        /*positionL: absoulute; -> 해당 레이어의 가장 위쪽, 아래, 왼, 오른쪽에 위치*/
+        top: -10px;
+        left: -10px;
+        background-color: wheat;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div id="different"></div>
+  </body>
+</html>
+
+<!-- 인라인 블락은 요소 사이에 빈공간이 default로 존재하여 매우 불편함 -->
+<!-- responsibe design을 제공하지 않음, 모니터의 크기에 따라 한줄에 모든 블락이 안들어올수도 있음-->
+<!--flex, justify-content는 계산을 알아서 해주기 때문에 창 크기에 따른 영향을 받지 않음-->

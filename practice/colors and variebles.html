@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        height: 1000vh; /*view for height 화면의 크기의 따라 달라지는 단위*/
+        margin: 50px;
+      }
+      :root {
+        --main-color: #f5ae18;
+        --default-border: 1px solid var(--main-color);
+      }
+
+      p {
+        background-color: #f5ae18;
+        background-color: rgb(252, 206, 0, 0.2);
+      }
+      /* 크롬 확장 프로그램을 이용해서 웹사이트의 컬러를 추출 해서 복사하면 16진수의 컬러 번호를 가져올 수 있음 */
+      /* 눌러서 color picker 누르면 rgb값 복사해올 수 있음*/
+      /* rgb의 4번째 입력 값은 opacity, 투명도를 조절 1이면 full, 0이면 색깔 적용 x*/
+      span {
+        color: var(--main-color);
+        border: var(--default-border);
+      }
+      /* 컬러를 변수(variable or custom property)로 저장하여 언제든 불러와서 사용 가능  */
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        asdwda sdasdcsadasa sdweqsdasddda sdas asdasdasdqwesadda
+        dasdasdasdadasdasdas.
+      </p>
+      <address>hi</address>
+      <span>inside</span>
+    </div>
+  </body>
+</html>
+
+<!--position: static; 는 레이아웃이 박스를 처음 위치하는 곳에 두는 것을 말함-->
+<!--position: relative; element가 처음 위치한 곳을 기준으로 수정-->
+<!--position: absolute는 부모 element가 기준이 아님 relative한 부모 element를 기준-->
+<!--부모를 기준으로 위치를 조정하고 싶다면 부모를 relative로 설정해주면 됨-->
+<!--그렇게 설정해주면 부모보다 자식의 박스 크기가 더 작다면 부모 박스 안에서 top bottom left right의 끝단에 위치하게 됨-->

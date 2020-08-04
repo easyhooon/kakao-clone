@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      body {
+        height: 100vh; /*view for height 화면의 크기의 따라 달라지는 단위*/
+        margin: 20px;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        color: white;
+        background-color: teal;
+      }
+      .green {
+        position: relative; /*부모 element가 처음 위치한 곳을 기준으로 위치를 수정*/
+        position: absolute; /*relative한 부모의 위치를 기준으로 위, 아래, 왼, 오른쪽, div는 relative가 아니므로 부모는 body*/
+        bottom: 0px;
+        background-color: wheat;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="green"></div>
+    </div>
+  </body>
+</html>
+
+<!--position: static; 는 레이아웃이 박스를 처음 위치하는 곳에 두는 것을 말함-->
+<!--position: relative; element가 처음 위치한 곳을 기준으로 수정-->\
+<!--position: absolute는 부모 element가 기준이 아님 relative한 부모 element를 기준-->
+<!--부모를 기준으로 위치를 조정하고 싶다면 부모를 relative로 설정해주면 됨-->
+<!--그렇게 설정해주면 부모보다 자식의 박스 크기가 더 작다면 부모 박스 안에서 top bottom left right의 끝단에 위치하게 됨-->

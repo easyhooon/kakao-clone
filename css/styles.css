@@ -1,0 +1,125 @@
+/*selector(id, class, tag nmae){
+    property-name: value;
+}*/
+/*첫번째 파트는 selector, 두번째는 property*/
+/*이 괄호가 selector, 태크, 링크 , 문단, 헤더, 푸터가 될 수 있음, div도 가능*/
+/*id는 앞에 #, class는 앞에.
+/*태그 + class hi.name 이런식으로도 작성 가능 */
+/*h1{
+    color:green;
+    font-size:10px;
+}*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "reset.css";
+@import "variables.css";
+
+/* Components */
+@import "components/status-bar.css";
+@import "components/nav-bar.css";
+@import "components/screen-header.css";
+@import "components/user-component.css";
+@import "components/badge.css";
+@import "components/icon-row.css";
+@import "components/alt-screen-header.css";
+@import "components/no-mobile.css";
+
+/* Screens */
+@import "screens/login.css";
+@import "screens/friends.css";
+@import "screens/find.css";
+@import "screens/more.css";
+@import "screens/settings.css";
+@import "screens/chat.css";
+/*import를 css에 해주어 html에 계속 추가하는 것을 방지*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #2e363e;
+}
+/* 애플 글꼴 적용 */
+
+.main-screen {
+  padding: 0px var(--horizontal-space);
+}
+.welcome-header {
+  margin: 90px 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+}
+/*margin에 두개가 있으면 상하/좌우 로 적용되는 것이기 때문에 상하에 각각 90을 주고 싶으면 90 0*/
+
+.welcome-header__title {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+.welcome-header__text {
+  width: 60%;
+  opacity: 0.7;
+}
+/* 검정색의 opacity를 주어 회색을 만듬 */
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px;
+}
+
+#login-form input {
+  padding: 15px 0px;
+  border: none;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+/* .login-form__input{
+
+}
+.login-form__btn {
+}
+.login-form__a{
+
+}
+
+아래 같이 안쓰고 형식을 위에 랑 통일 시킬 수 있음 개인적으로 이게 더 나은 것 같음 */
+
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+}
+/* 로그인 버튼에 border-bottom을 적용하지 않기 위해 작성 */
+
+/* input type이 submit이 아닐때를 의미 ([]의 사이에 쓰인 것들을 특성 선택자(attribute selector)라고 함); */
+/* type="submit" : 폼의 전송 기능을 담당한다.
+
+폼 전송 기능을 하는 <input type="submit"> 과 <button> 은 기능적으로 동일하다. 
+기본적으로 button 요소는 type 속성을 명시하지 않으면 submit 기능을 수행한다. 
+즉 폼에서 이를 대체하기 위한 목적으로는 안성맞춤이다. */
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#login-form input:focus {
+  border-color: var(--yellow);
+}
+
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  padding: 20px 0px;
+  border-radius: 5px;
+}
+/*border-radius -> 버튼의 모서리를 깎아서 둥글게 만드는 것*/
+
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+/*a(anchor)가 색상을 아버지로 부터 상속받아 옴*/

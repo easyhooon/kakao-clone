@@ -1,0 +1,22 @@
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+/* display: flex; -> 가로로 놓일 수 있게 */
+/* 같은 코드가 반복되면 변수로 만드는 것을 습관화 귀납적으로 만들어지는 것이 당연, 수정이 필요 */
+
+.icon-row__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-row__icon i {
+  font-size: 35px;
+}
+/* find-icons__icon i 이라 안하고 i라 하면 화면에 모든 icon이 커짐 와이파이 모양이나 번개모양도 */
+
+.icon-row__icon span {
+  margin-top: 18px;
+}

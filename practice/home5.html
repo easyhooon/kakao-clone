@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html lang="kr">
+    <head>
+      <title>The Nico Times</title>
+      <style>
+        *{
+            border: 2px solid black;
+        }
+        html {
+          background-color: tomato;
+        }
+        body {
+          margin: 0px;
+          padding: 20px;
+          background-color: thistle;
+        }
+        div {
+          height: 150px;
+          width: 150px;
+          padding: 20px;
+          background-color: whitesmoke;
+          border: 2px solid black;
+        }
+        #first{
+            background-color: whitesmoke;
+            width: 150px;
+            height: 150px;
+        }
+        #second {
+            background-color: teal;
+            width: 100px;
+            height: 100px;
+        }
+        #third{
+            background-color: wheat;
+            width: 50px;
+            height: 50px;
+        }
+      </style>
+    </head>
+    <body>
+      <div id = "first">
+          <div id = "second">
+              <div id = "third">
+              </div>
+          </div>
+      </div>
+    </body>
+  </html>
+  <!-- 패딩은 박스의 보더, 경계에서 안쪽으로의 간격을 의미-->
+  <!-- 마진은 박스의 보더, 경계에서 바깥쪽을의 간격을 의미 기본값 8px-->
+  <!-- 보더는 박스의 경계-->
+  <!-- 방향을 지정해주지않으면 전 방향으로 적용-->
+  <!-- 두개면, 상하, 좌우-->
+  <!--padding: 20px 10px; 상하로 20px, 좌우로 10px-->
+  <!--네개면 상 우 하 좌 순, -->
+  <!--보더: 경게를 의미-->
+  <!-- 폭(width), 스타일(style), color 순으로 작성하면 끝-->
+  <!--collapsing margin-->
+  <!--margin의 위아래에서만 일어나는 현상-->
+  <!--흰 box의 경계가 보라색box의 경계와 같다면 이 두 margin이 하나로 취급되는 것-->
+  <!-- 경계가  닿아서 margin이 같아졌나 보구나~-->
+  <!--이 것을 해결하기 위한 패딩이 필요-->
+  <!--id의 이름을 통해 css에 접근할 수 있음-->
+  <!--* <- 전체를 의미 전체에 공통적인 것을 적용할 때 사용-->
+</html>

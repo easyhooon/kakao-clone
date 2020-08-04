@@ -1,0 +1,36 @@
+.alt-header {
+  padding: 50px;
+  margin-bottom: 15 px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alt-header__column {
+  width: 33%;
+}
+/* 가운데정렬 */
+
+.alt-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.alt-header__column:first-child {
+  margin-right: auto;
+}
+
+.alt-header__column:nth-child(2) {
+  text-align: center;
+}
+
+.alt-header__column:last-child {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+/* 가운데 정렬 치트키 발동 */
+
+.alt-header__column span:last-child {
+  margin-left: 25px;
+}
